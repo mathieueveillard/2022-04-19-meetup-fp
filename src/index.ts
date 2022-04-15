@@ -1,26 +1,28 @@
 const isMultipleOf = (m: number, n: number): boolean => n % m === 0;
 
 export const replace = (n: number): string => {
-  const appendFizzIfNIsMultipleOf3 = (): void => {
+  const appendFizzIfNIsMultipleOf3 = (): string => {
     if (isMultipleOf(3, n)) {
-      result += "Fizz";
+      return result + "Fizz";
     }
+    return result;
   };
 
-  const appendBuzzIfNIsMultipleOf5 = (): void => {
+  const appendBuzzIfNIsMultipleOf5 = (): string => {
     if (isMultipleOf(5, n)) {
-      result += "Buzz";
+      return result + "Buzz";
     }
+    return result;
   };
 
-  const appendNOtherwise = (): void => {
-    result = result || n.toString();
+  const appendNOtherwise = (): string => {
+    return result || n.toString();
   };
 
   let result = "";
-  appendFizzIfNIsMultipleOf3();
-  appendBuzzIfNIsMultipleOf5();
-  appendNOtherwise();
+  result = appendFizzIfNIsMultipleOf3();
+  result = appendBuzzIfNIsMultipleOf5();
+  result = appendNOtherwise();
   return result;
 };
 
