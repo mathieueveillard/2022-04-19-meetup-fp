@@ -1,5 +1,7 @@
-const IdentityFunctor = (value) => ({
-  map: (fn) => IdentityFunctor(fn(value)),
+type MappingFunction<U, V> = (u: U) => V;
+
+const IdentityFunctor = <U>(value: U) => ({
+  map: <V>(fn: MappingFunction<U, V>) => IdentityFunctor(fn(value)),
   get: () => value,
 });
 
