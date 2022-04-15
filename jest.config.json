@@ -1,0 +1,4 @@
+{
+  "testEnvironment": "node",
+  "testMatch": ["**/?(*.)spec.ts?(x)"]
+}
