@@ -5,29 +5,35 @@ const compose =
 
 const isMultipleOf = (m: number, n: number): boolean => n % m === 0;
 
-const appendFizzIfNIsMultipleOf3 = (n: number, s: string): string => {
-  if (isMultipleOf(3, n)) {
-    return s + "Fizz";
-  }
-  return s;
-};
+const appendFizzIfNIsMultipleOf3 =
+  (n: number) =>
+  (s: string): string => {
+    if (isMultipleOf(3, n)) {
+      return s + "Fizz";
+    }
+    return s;
+  };
 
-const appendBuzzIfNIsMultipleOf5 = (n: number, s: string): string => {
-  if (isMultipleOf(5, n)) {
-    return s + "Buzz";
-  }
-  return s;
-};
+const appendBuzzIfNIsMultipleOf5 =
+  (n: number) =>
+  (s: string): string => {
+    if (isMultipleOf(5, n)) {
+      return s + "Buzz";
+    }
+    return s;
+  };
 
-const appendNOtherwise = (n: number, s: string): string => {
-  return s || n.toString();
-};
+const appendNOtherwise =
+  (n: number) =>
+  (s: string): string => {
+    return s || n.toString();
+  };
 
 export const replace = (n: number): string => {
   return compose(
-    (s) => appendFizzIfNIsMultipleOf3(n, s),
-    (s) => appendBuzzIfNIsMultipleOf5(n, s),
-    (s) => appendNOtherwise(n, s)
+    appendFizzIfNIsMultipleOf3(n), //
+    appendBuzzIfNIsMultipleOf5(n),
+    appendNOtherwise(n)
   )("");
 };
 
