@@ -1,5 +1,5 @@
 {
-  "name": "js-kata-starter",
+  "name": "2022-04-19-meetup-fp",
   "version": "1.0.0",
   "description": "Starter project for kata (Node, TypeScript, Jest)",
   "main": "index.js",
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mathieueveillard/js-kata-starter.git"
+    "url": "git+https://github.com/mathieueveillard/2022-04-19-meetup-fp.git"
   },
   "keywords": [
     "starter",
@@ -41,7 +41,7 @@
   "author": "Mathieu Eveillard",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mathieueveillard/js-kata-starter/issues"
+    "url": "https://github.com/mathieueveillard/2022-04-19-meetup-fp/issues"
   },
-  "homepage": "https://github.com/mathieueveillard/js-kata-starter#readme"
+  "homepage": "https://github.com/mathieueveillard/2022-04-19-meetup-fp#readme"
 }
