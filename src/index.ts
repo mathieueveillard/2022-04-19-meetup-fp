@@ -1,3 +1,8 @@
+const IdentityFunctor = (value) => ({
+  map: (fn) => IdentityFunctor(fn(value)),
+  get: () => value,
+});
+
 const isMultipleOf =
   (m: number) =>
   (n: number): boolean =>
@@ -28,10 +33,11 @@ const appendNOtherwise =
   };
 
 export const replace = (n: number): string => {
-  return [""]
+  return IdentityFunctor("")
     .map(appendFizzIfNIsMultipleOf3(n)) //
     .map(appendBuzzIfNIsMultipleOf5(n))
-    .map(appendNOtherwise(n))[0];
+    .map(appendNOtherwise(n))
+    .get();
 };
 
 export const fizzBuzz = (n: number): string[] => {
