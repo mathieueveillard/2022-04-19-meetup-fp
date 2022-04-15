@@ -1,3 +1,8 @@
+const compose =
+  (...fns) =>
+  (x) =>
+    fns.reduce((y, fn) => fn(y), x);
+
 const isMultipleOf = (m: number, n: number): boolean => n % m === 0;
 
 const appendFizzIfNIsMultipleOf3 = (n: number, s: string): string => {
@@ -19,11 +24,11 @@ const appendNOtherwise = (n: number, s: string): string => {
 };
 
 export const replace = (n: number): string => {
-  const step0 = "";
-  const step1 = appendFizzIfNIsMultipleOf3(n, step0);
-  const step2 = appendBuzzIfNIsMultipleOf5(n, step1);
-  const step3 = appendNOtherwise(n, step2);
-  return step3;
+  return compose(
+    (s) => appendFizzIfNIsMultipleOf3(n, s),
+    (s) => appendBuzzIfNIsMultipleOf5(n, s),
+    (s) => appendNOtherwise(n, s)
+  )("");
 };
 
 export const fizzBuzz = (n: number): string[] => {
