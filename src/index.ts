@@ -3,12 +3,15 @@ const compose =
   (x) =>
     fns.reduce((y, fn) => fn(y), x);
 
-const isMultipleOf = (m: number, n: number): boolean => n % m === 0;
+const isMultipleOf =
+  (m: number) =>
+  (n: number): boolean =>
+    n % m === 0;
 
 const appendFizzIfNIsMultipleOf3 =
   (n: number) =>
   (s: string): string => {
-    if (isMultipleOf(3, n)) {
+    if (isMultipleOf(3)(n)) {
       return s + "Fizz";
     }
     return s;
@@ -17,7 +20,7 @@ const appendFizzIfNIsMultipleOf3 =
 const appendBuzzIfNIsMultipleOf5 =
   (n: number) =>
   (s: string): string => {
-    if (isMultipleOf(5, n)) {
+    if (isMultipleOf(5)(n)) {
       return s + "Buzz";
     }
     return s;
