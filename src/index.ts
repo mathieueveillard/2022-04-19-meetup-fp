@@ -1,17 +1,27 @@
 const isMultipleOf = (m: number, n: number): boolean => n % m === 0;
 
 export const replace = (n: number): string => {
+  const appendFizzIfNIsMultipleOf3 = (): void => {
+    if (isMultipleOf(3, n)) {
+      result += "Fizz";
+    }
+  };
+
+  const appendBuzzIfNIsMultipleOf5 = (): void => {
+    if (isMultipleOf(5, n)) {
+      result += "Buzz";
+    }
+  };
+
+  const appendNOtherwise = (): void => {
+    result = result || n.toString();
+  };
+
   let result = "";
-
-  if (isMultipleOf(3, n)) {
-    result += "Fizz";
-  }
-
-  if (isMultipleOf(5, n)) {
-    result += "Buzz";
-  }
-
-  return result || n.toString();
+  appendFizzIfNIsMultipleOf3();
+  appendBuzzIfNIsMultipleOf5();
+  appendNOtherwise();
+  return result;
 };
 
 export const fizzBuzz = (n: number): string[] => {
