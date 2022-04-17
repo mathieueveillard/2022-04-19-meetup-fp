@@ -10,7 +10,11 @@
 
 ### Problem statement
 
-Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
+Write a program that prints the numbers from 1 to 100. But for multiples of 3 print “Fizz” instead of the number and for the multiples of 5 print “Buzz”. For numbers which are multiples of both 3 and 5 print “FizzBuzz”, e.g.:
+
+```
+1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz
+```
 
 https://en.wikipedia.org/wiki/Fizz_buzz
 
