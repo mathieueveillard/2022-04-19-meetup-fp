@@ -10,23 +10,20 @@ const isMultipleOf =
   (n: number): boolean =>
     n % m === 0;
 
-const appendFizzIfNIsMultipleOf3 =
+const appendSlugIfMultipleOf =
+  (slug: string) =>
+  (m: number) =>
   (n: number) =>
   (s: string): string => {
-    if (isMultipleOf(3)(n)) {
-      return s + "Fizz";
+    if (isMultipleOf(m)(n)) {
+      return s + slug;
     }
     return s;
   };
 
-const appendBuzzIfNIsMultipleOf5 =
-  (n: number) =>
-  (s: string): string => {
-    if (isMultipleOf(5)(n)) {
-      return s + "Buzz";
-    }
-    return s;
-  };
+const appendFizzIfNIsMultipleOf3 = appendSlugIfMultipleOf("Fizz")(3);
+
+const appendBuzzIfNIsMultipleOf5 = appendSlugIfMultipleOf("Buzz")(5);
 
 const appendNOtherwise =
   (n: number) =>
